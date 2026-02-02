@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        text-decoration: none !important;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-white text-brand-black antialiased selection:bg-brand-blue-1 selection:text-white;
+    }
+    a {
+        @apply no-underline hover:text-brand-blue-1 transition-colors;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold tracking-tight text-brand-black;
+    }
+}
+
+@layer utilities {
+    .font-display { font-family: 'Outfit', sans-serif; }
+    
+    .text-shadow-sm {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Light theme glass */
+    .bg-glass {
+        @apply bg-white/80 backdrop-blur-xl border border-gray-100 shadow-lg;
+    }
+    
+    .card-hover {
+        @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+    }
+    
+    /* Shapes & Polygons */
+    .clip-polygon {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    
+    .clip-slant {
+        clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+    }
+    @media (min-width: 768px) {
+        .clip-slant {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+    }
+}
+
+/* Custom Animations */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 8s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+/* Gradient Utility */
+.brand-gradient {
+    @apply bg-gradient-to-r from-brand-blue-1 to-brand-blue-2;
+}
+.brand-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue-1 to-brand-blue-2;
+}

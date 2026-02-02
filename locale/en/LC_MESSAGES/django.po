@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-31 18:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: core/models.py:5
+msgid "Name"
+msgstr ""
+
+#: core/models.py:6
+msgid "Description"
+msgstr ""
+
+#: core/models.py:7
+msgid "Minimum Price"
+msgstr ""
+
+#: core/models.py:10
+msgid "Category"
+msgstr ""
+
+#: core/models.py:11 core/models.py:18
+msgid "Categories"
+msgstr ""
+
+#: core/models.py:17
+msgid "Thumbnail"
+msgstr ""
+
+#: core/models.py:19
+msgid "Project Link"
+msgstr ""
+
+#: core/models.py:23
+msgid "Project"
+msgstr ""
+
+#: core/models.py:24 core/templates/core/project_list.html:4
+#: templates/core/components/navbar.html:16
+#: templates/core/components/navbar.html:58
+msgid "Projects"
+msgstr ""
+
+#: core/templates/core/category_detail.html:17
+msgid "Starting at"
+msgstr ""
+
+#: core/templates/core/category_detail.html:23
+msgid "Back to Projects"
+msgstr ""
+
+#: core/templates/core/home.html:4
+msgid "Home"
+msgstr ""
+
+#: core/templates/core/home.html:17
+msgid "VISUAL"
+msgstr ""
+
+#: core/templates/core/home.html:17
+msgid "STORYTELLER"
+msgstr ""
+
+#: core/templates/core/home.html:20
+msgid "Motion Graphics • VFX • Post-Production • 3D"
+msgstr ""
+
+#: core/templates/core/home.html:24
+msgid "View Work"
+msgstr ""
+
+#: core/templates/core/home.html:27
+msgid "Contact Me"
+msgstr ""
+
+#: core/templates/core/home.html:44
+msgid "About Me"
+msgstr ""
+
+#: core/templates/core/home.html:47
+msgid ""
+"I am a passionate audio-visual professional specializing in Motion Graphics, "
+"VFX, and Post-production. With years of experience bringing stories to life "
+"through digital media, I blend technical expertise with artistic vision to "
+"create compelling visual narratives."
+msgstr ""
+
+#: core/templates/core/home.html:51
+msgid "Motion Graphics"
+msgstr ""
+
+#: core/templates/core/home.html:52
+msgid "Dynamic animation and branding"
+msgstr ""
+
+#: core/templates/core/home.html:55
+msgid "VFX & 3D"
+msgstr ""
+
+#: core/templates/core/home.html:56
+msgid "Visual effects and 3D modeling"
+msgstr ""
+
+#: core/templates/core/home.html:67
+msgid "Get In Touch"
+msgstr ""
+
+#: core/templates/core/home.html:70
+msgid "Email"
+msgstr ""
+
+#: core/templates/core/home.html:74
+msgid "Location"
+msgstr ""
+
+#: core/templates/core/home.html:75
+msgid "Havana, Cuba"
+msgstr ""
+
+#: core/templates/core/home.html:78
+msgid "Socials"
+msgstr ""
+
+#: core/templates/core/project_list.html:8
+msgid "Selected Works"
+msgstr ""
+
+#: core/templates/core/project_list.html:48
+msgid "Watch Project"
+msgstr ""
+
+#: portfolio_didox/settings.py:118
+msgid "Spanish"
+msgstr ""
+
+#: portfolio_didox/settings.py:119
+msgid "English"
+msgstr ""
+
+#: templates/core/components/navbar.html:14
+#: templates/core/components/navbar.html:57
+msgid "About"
+msgstr ""

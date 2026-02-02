@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+<!-- Main Container: Light Theme & Overflow Control -->
+<div class="relative min-h-screen w-full bg-white overflow-hidden text-brand-black pt-20">
+
+    <!-- 1. Background MG Elements (Consistent with Home) -->
+    <!-- Gradient Orb (Subtle) -->
+    <div class="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-br from-brand-blue-1/20 to-transparent blur-[80px] pointer-events-none z-0"></div>
+    
+    <!-- Geometric Elements -->
+    <div class="mg-shape absolute top-[20%] left-[5%] md:left-[10%] opacity-20 z-0" data-speed="0.2">
+        <svg class="w-24 h-24 text-gray-200" fill="currentColor" viewBox="0 0 100 100">
+            <rect x="0" y="0" width="100" height="100" rx="20"></rect>
+        </svg>
+    </div>
+    
+    <div class="mg-shape absolute bottom-[10%] right-[5%] opacity-30 z-0" data-speed="0.5">
+        <svg class="w-32 h-32 md:w-48 md:h-48" viewBox="0 0 200 200">
+             <path d="M100 20 L180 180 L20 180 Z" fill="none" stroke="#196CFF" stroke-width="2" />
+        </svg>
+    </div>
+
+    <!-- Dot Grid (Technical Feel) -->
+    <div class="absolute top-[40%] right-[10%] grid grid-cols-6 gap-2 opacity-10 pointer-events-none z-0">
+        {% for i in "123456789012345678901234" %}
+        <div class="w-1 h-1 rounded-full bg-brand-black"></div>
+        {% endfor %}
+    </div>
+
+
+    <!-- Content Grid -->
+    <div class="container mx-auto px-6 relative z-10">
+        
+        <!-- Navigation Breadcrumb / Back Link -->
+        <div class="mb-12 md:mb-20 fade-in-element">
+            <a href="{% url 'project_list' %}" class="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-brand-black transition-colors group">
+                <span class="w-8 h-[1px] bg-gray-300 group-hover:w-12 group-hover:bg-brand-blue-1 transition-all duration-300"></span>
+                {% trans "Back to Projects" %}
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            
+            <!-- Left Column: Big Typography & Title -->
+            <div class="lg:col-span-7 space-y-8">
+                <!-- Decorative Label -->
+                <div class="inline-block px-3 py-1 border border-brand-black rounded-full text-[10px] font-mono uppercase tracking-widest mb-4 fade-in-element">
+                    {% trans "Service Category" %}
+                </div>
+
+                <!-- Massive Title -->
+                <h1 class="text-6xl md:text-8xl lg:text-[7rem] font-display font-black leading-[0.9] tracking-tighter uppercase text-brand-black break-words reveal-text">
+                    {{ category.name }}
+                </h1>
+                
+                <!-- Eliminada la barra azul que no te gustaba -->
+            </div>
+
+            <!-- Right Column: Description & Price (Editorial Style) -->
+            <div class="lg:col-span-5 flex flex-col justify-center h-full pt-4 lg:pt-24 space-y-12">
+                
+                <!-- Description -->
+                <div class="prose prose-lg text-gray-600 font-light leading-relaxed fade-in-element">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% if LANGUAGE_CODE == 'es' and category.description_es %}
+                        {{ category.description_es|linebreaks }}
+                    {% else %}
+                        {{ category.description_en|linebreaks }}
+                    {% endif %}
+                </div>
+
+                <!-- Price Block (Designed as a Graphic Element) -->
+                <div class="border-t border-gray-200 pt-10 fade-in-element">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">{% trans "Starting Investment" %}</p>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-6xl md:text-7xl font-display font-bold text-brand-blue-1 tracking-tighter">
+                            ${{ category.min_price }}
+                        </span>
+                        <!-- Cambiado a "min" -->
+                        <span class="text-xl text-brand-black font-medium">/ min</span>
+                    </div>
+                </div>
+
+                <!-- Call to Actions -->
+                <!-- Agregado items-start para que los botones no se estiren -->
+                <div class="flex flex-col sm:flex-row gap-6 pt-4 fade-in-element items-start">
+                    <!-- Botón 1: Quitada clase w-full, forzado text-white en hover -->
+                    <a href="{% url 'home' %}#contact" class="group relative px-8 py-4 bg-brand-black text-white overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-center sm:text-left inline-block w-auto">
+                         <span class="absolute inset-0 w-full h-full bg-brand-blue-1 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
+                         <span class="relative z-10 font-bold tracking-widest uppercase text-sm text-white group-hover:text-white">{% trans "Book This Service" %}</span>
+                    </a>
+                    
+                    <!-- Botón 2: Quitada clase w-full -->
+                    <a href="{% url 'project_list' %}?category={{ category.id }}" class="group px-8 py-4 border-2 border-gray-200 hover:border-brand-black text-gray-500 hover:text-brand-black font-bold tracking-widest uppercase text-sm transition-all duration-300 text-center sm:text-left w-auto">
+                        {% trans "View Examples" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eliminado el degradado inferior que molestaba -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Text Reveal Animation (Staggered fade up)
+        gsap.from(".reveal-text", {
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out",
+            skewY: 5
+        });
+
+        // 2. Elements Fade In
+        gsap.from(".fade-in-element", {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power3.out",
+            delay: 0.4
+        });
+
+        // 3. Shapes Float Animation
+        gsap.to(".mg-shape", {
+            y: "random(-20, 20)",
+            rotation: "random(-10, 10)",
+            duration: "random(4, 6)",
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+        
+        // 4. Parallax effect on mouse move (Subtle)
+        document.addEventListener("mousemove", (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            
+            gsap.to(".mg-shape", {
+                x: x,
+                y: y,
+                duration: 1,
+                ease: "power1.out"
+            });
+        });
+    });
+</script>
+{% endblock %}
