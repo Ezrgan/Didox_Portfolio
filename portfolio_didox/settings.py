@@ -31,6 +31,15 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 if not ALLOWED_HOSTS or ALLOWED_HOSTS == ['']:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
+# Production Security Settings
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
 
 # Application definition
 
@@ -41,10 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_modeltranslation', # Installed via pip, need to add it here, BUT wait, user said NO translation library. 
-    # Ah, I installed it but user cancelled/rejected. I should NOT add it.
-    # User said "no quiero instalar ninguna libreria de traduccion".
-    # So I will NOT add 'modeltranslation'.
+    # 'django_modeltranslation', # User rejected translation library
     'core',
 ]
 
