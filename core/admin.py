@@ -18,3 +18,7 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('description', 'created_at')
     list_filter = ('categories',)
     filter_horizontal = ('categories',)
+
+@admin.register(CategoryExample)
+class CategoryExampleAdmin(admin.ModelAdmin):
+    list_display = ('category', 'created_at')
