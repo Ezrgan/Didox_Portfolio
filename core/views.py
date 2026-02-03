@@ -34,7 +34,8 @@ class ProjectListView(ListView):
                     'id': project.id,
                     'thumbnail_url': project.thumbnail.url if project.thumbnail else '',
                     'link': project.link,
-                    'categories': [{'id': cat.id, 'name': cat.name} for cat in project.categories.all()]
+                    'categories': [{'id': cat.id, 'name': cat.name} for cat in project.categories.all()],
+                    'is_gfx': project.categories.first().is_gfx if project.categories.exists() else False
                 })
             
             return JsonResponse({
