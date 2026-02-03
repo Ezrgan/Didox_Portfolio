@@ -67,6 +67,16 @@
     animation-delay: 2s;
 }
 
+/* Pulse Blue Animation for Mobile Categories */
+@keyframes pulse-blue {
+    0%, 100% { color: #6b7280; text-shadow: none; } /* text-gray-500 */
+    50% { color: #196CFF; text-shadow: 0 0 8px rgba(25, 108, 255, 0.3); } /* brand-blue-1 */
+}
+
+.animate-pulse-blue {
+    animation: pulse-blue 3s ease-in-out infinite;
+}
+
 /* Gradient Utility */
 .brand-gradient {
     @apply bg-gradient-to-r from-brand-blue-1 to-brand-blue-2;
