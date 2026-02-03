@@ -74,7 +74,8 @@
 }
 
 .animate-pulse-blue {
-    animation: pulse-blue 3s ease-in-out infinite;
+    animation: pulse-blue 1.5s ease-in-out 1 forwards;
+    animation-delay: 0.5s;
 }
 
 /* Gradient Utility */

@@ -44,6 +44,14 @@
                 </div>
                 {% endif %}
                 
+                <!-- Desktop Hover Overlay (Whitish + Watch Button) -->
+                <div class="absolute inset-0 z-10 hidden lg:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/40 backdrop-blur-[2px]">
+                    <div class="bg-brand-black text-white px-6 py-2 rounded-full flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        <span class="font-bold uppercase tracking-widest text-xs">{% trans "Watch" %}</span>
+                    </div>
+                </div>
+
                 <!-- Play Button Overlay (Mobile/Tablet Only) -->
                 <div class="absolute bottom-3 right-3 z-10 lg:hidden pointer-events-none">
                     <div class="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
@@ -191,6 +199,14 @@
                         `<img src="${project.thumbnail_url}" alt="Project" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out will-change-transform">` : 
                         `<div class="w-full h-full flex flex-col items-center justify-center text-gray-400 bg-gray-50"><svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg><span class="text-[10px] uppercase tracking-widest font-bold">No Preview</span></div>`}
                     
+                    <!-- Desktop Hover Overlay (Whitish + Watch Button) -->
+                    <div class="absolute inset-0 z-10 hidden lg:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/40 backdrop-blur-[2px]">
+                        <div class="bg-brand-black text-white px-6 py-2 rounded-full flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span class="font-bold uppercase tracking-widest text-xs">Watch</span>
+                        </div>
+                    </div>
+
                     <!-- Play Button Overlay (Mobile/Tablet Only) -->
                     <div class="absolute bottom-3 right-3 z-10 lg:hidden pointer-events-none">
                         <div class="w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
