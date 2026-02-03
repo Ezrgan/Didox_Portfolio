@@ -97,22 +97,22 @@
                     </a>
                 </div>
 
-                <!-- Examples Section (Optional) -->
-                {% if category.examples.all %}
-                <div class="border-t border-gray-200 pt-8 mt-8 fade-in-element">
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">{% trans "Examples" %}</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        {% for example in category.examples.all %}
-                        <div class="relative aspect-video rounded-lg overflow-hidden shadow-md bg-gray-100">
-                            <img src="{{ example.image.url }}" alt="Example" class="w-full h-full object-cover pointer-events-none">
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
-                </div>
             </div>
         </div>
+
+        <!-- Examples Section (Full Width below grid) -->
+        {% if category.examples.all %}
+        <div class="mt-20 border-t border-gray-200 pt-10 fade-in-element">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8 text-center md:text-left">{% trans "Examples" %}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {% for example in category.examples.all %}
+                <div class="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-100 hover:shadow-2xl transition-shadow duration-300">
+                    <img src="{{ example.image.url }}" alt="Example" class="w-full h-full object-cover pointer-events-none">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
     </div>
 
     <!-- Eliminado el degradado inferior que molestaba -->
