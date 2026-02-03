@@ -90,14 +90,16 @@
             <a href="{% url 'home' %}#contact" @click="open = false" class="text-3xl font-display font-bold text-brand-black hover:text-brand-blue-1 transition-colors no-underline">{% trans "Contact" %}</a>
             
             <!-- Mobile Language Selector -->
-            <div class="pt-8 w-full border-t border-gray-100 flex justify-center">
+            <div class="pt-8 w-full border-t border-gray-100 flex justify-center z-[60]">
                 <form action="{% url 'set_language' %}" method="post" class="flex justify-center gap-6 items-center">
                     {% csrf_token %}
                     <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                    <button type="submit" name="language" value="es" class="text-sm font-bold tracking-widest uppercase transition-colors {% if LANGUAGE_CODE == 'es' %}text-brand-black border-b-2 border-brand-black{% else %}text-gray-400 hover:text-brand-black{% endif %}">
+                    <!-- Added onclick="event.stopPropagation();" to prevent menu closing logic from interfering -->
+                    <button type="submit" name="language" value="es" class="text-sm font-bold tracking-widest uppercase transition-colors p-2 z-50 {% if LANGUAGE_CODE == 'es' %}text-brand-black border-b-2 border-brand-black{% else %}text-gray-400 hover:text-brand-black{% endif %}">
                         Español
                     </button>
-                    <button type="submit" name="language" value="en" class="text-sm font-bold tracking-widest uppercase transition-colors {% if LANGUAGE_CODE == 'en' %}text-brand-black border-b-2 border-brand-black{% else %}text-gray-400 hover:text-brand-black{% endif %}">
+                    <!-- Added onclick="event.stopPropagation();" -->
+                    <button type="submit" name="language" value="en" class="text-sm font-bold tracking-widest uppercase transition-colors p-2 z-50 {% if LANGUAGE_CODE == 'en' %}text-brand-black border-b-2 border-brand-black{% else %}text-gray-400 hover:text-brand-black{% endif %}">
                         English
                     </button>
                 </form>

@@ -33,7 +33,8 @@ Ejecuta estos comandos uno por uno en la consola:
    ```bash
    source myenv/bin/activate
    ```
-3. Instalar dependencias:
+3. Si no coinciden, es más fácil borrar el entorno (`rm -rf myenv`) y crearlo de nuevo especificando la versión: `python3.12 -m venv myenv` (o la versión que tengas seleccionada en la Web).
+4. Instalar dependencias:
    ```bash
    pip install -r requirements.txt
    ```

@@ -14,7 +14,7 @@ class ProjectListView(ListView):
     paginate_by = 15
 
     def get_queryset(self):
-        queryset = Project.objects.all()
+        queryset = Project.objects.all().prefetch_related('categories')
         categories = self.request.GET.getlist('categories[]')
         if categories:
             queryset = queryset.filter(categories__id__in=categories).distinct()
