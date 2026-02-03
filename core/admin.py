@@ -11,6 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'min_price')
     search_fields = ('name',)
     inlines = [CategoryExampleInline]
+    save_on_top = True
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
