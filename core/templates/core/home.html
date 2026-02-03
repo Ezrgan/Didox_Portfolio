@@ -69,12 +69,12 @@
         
         <!-- CTAs -->
         <div class="hero-cta flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 opacity-0 translate-y-10 w-full">
-            <a href="{% url 'project_list' %}" class="group relative px-8 py-4 md:px-10 md:py-5 bg-brand-black overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 inline-block no-underline w-auto">
+            <a href="{% url 'project_list' %}" class="group relative bg-brand-black overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 inline-flex justify-center items-center no-underline w-full md:w-52 h-14 md:h-16">
                 <span class="absolute inset-0 w-full h-full bg-brand-blue-1 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
                 <span class="relative font-bold tracking-widest uppercase text-xs md:text-sm z-10 text-white group-hover:text-white transition-colors duration-300">{% trans "View Work" %}</span>
             </a>
             
-            <a href="#contact" class="px-8 py-4 md:px-10 md:py-5 border-2 border-brand-black text-brand-black font-bold tracking-widest uppercase text-xs md:text-sm hover:bg-gray-50 transition-all duration-300 inline-block no-underline w-auto">
+            <a href="#contact" class="border-2 border-brand-black text-brand-black font-bold tracking-widest uppercase text-xs md:text-sm hover:bg-gray-50 transition-all duration-300 inline-flex justify-center items-center no-underline w-full md:w-52 h-14 md:h-16">
                 {% trans "Contact Me" %}
             </a>
         </div>
@@ -164,11 +164,6 @@
         <!-- Líneas muy sutiles -->
         <div class="absolute left-6 md:left-12 h-full w-[1px] bg-gray-100"></div>
         <div class="absolute right-6 md:right-12 h-full w-[1px] bg-gray-100"></div>
-        <!-- Marcadores azules -->
-        <div class="absolute top-12 left-6 md:left-12 w-4 h-[1px] bg-brand-blue-1"></div>
-        <div class="absolute top-12 right-6 md:right-12 w-4 h-[1px] bg-brand-blue-1"></div>
-        <div class="absolute bottom-12 left-6 md:left-12 w-4 h-[1px] bg-brand-blue-1"></div>
-        <div class="absolute bottom-12 right-6 md:right-12 w-4 h-[1px] bg-brand-blue-1"></div>
     </div>
 
     <div class="container mx-auto px-6 relative z-10">
@@ -398,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.to(".marquee-content", {
         xPercent: -100,
         repeat: -1,
-        duration: 20, 
+        duration: 50, 
         ease: "linear"
     });
 
