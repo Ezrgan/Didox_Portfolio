@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-02 20:26+0000\n"
+"POT-Creation-Date: 2026-02-03 01:22-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,34 +22,62 @@ msgid "Name"
 msgstr "Nombre"
 
 #: core/models.py:6
-msgid "Description"
+#, fuzzy
+#| msgid "Description"
+msgid "Description (English)"
 msgstr "Descripción"
 
 #: core/models.py:7
+#, fuzzy
+#| msgid "Description"
+msgid "Description (Spanish)"
+msgstr "Descripción"
+
+#: core/models.py:8
 msgid "Minimum Price"
 msgstr "Precio Mínimo"
 
-#: core/models.py:10
+#: core/models.py:11 core/models.py:24
 msgid "Category"
 msgstr "Categoría"
 
-#: core/models.py:11 core/models.py:18
+#: core/models.py:12 core/models.py:36
 msgid "Categories"
 msgstr "Categorías"
 
-#: core/models.py:17
+#: core/models.py:25
+msgid "Example GIF"
+msgstr "GIF de Ejemplo"
+
+#: core/models.py:29
+msgid "Category Example"
+msgstr "Ejemplo de Categoría"
+
+#: core/models.py:30
+msgid "Category Examples"
+msgstr "Ejemplos de Categoría"
+
+#: core/models.py:34
+msgid "Admin Description"
+msgstr "Descripción para Admin"
+
+#: core/models.py:34
+msgid "Internal description for identifying the project in the admin panel."
+msgstr "Descripción interna para identificar el proyecto en el panel de administración."
+
+#: core/models.py:35
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: core/models.py:19
+#: core/models.py:37
 msgid "Project Link"
 msgstr "Enlace del Proyecto"
 
-#: core/models.py:23
+#: core/models.py:41
 msgid "Project"
 msgstr "Proyecto"
 
-#: core/models.py:24 core/templates/core/project_list.html:4
+#: core/models.py:42 core/templates/core/project_list.html:4
 #: templates/core/components/navbar.html:26
 #: templates/core/components/navbar.html:89
 msgid "Projects"
@@ -64,17 +92,17 @@ msgid "Service Category"
 msgstr "Categoría de Servicio"
 
 # Category Detail
-#: core/templates/core/category_detail.html:73
+#: core/templates/core/category_detail.html:78
 msgid "Starting Investment"
 msgstr "Inversión Inicial"
 
-#: core/templates/core/category_detail.html:89
+#: core/templates/core/category_detail.html:94
 msgid "Book This Service"
 msgstr "Reservar este Servicio"
 
-#: core/templates/core/category_detail.html:94
-msgid "View Examples"
-msgstr "Ver Ejemplos"
+#: core/templates/core/category_detail.html:103
+msgid "Examples"
+msgstr "Ejemplos"
 
 # Home Page
 #: core/templates/core/home.html:4 templates/core/components/navbar.html:16
@@ -154,35 +182,35 @@ msgstr "Iniciar un Proyecto"
 msgid "Motion & Design"
 msgstr "Motion & Design"
 
-#: core/templates/core/home.html:185
+#: core/templates/core/home.html:180
 msgid "Open for work"
 msgstr "Disponible"
 
-#: core/templates/core/home.html:188
+#: core/templates/core/home.html:183
 msgid "Ready to make some"
 msgstr "¿Listo para hacer algo de"
 
-#: core/templates/core/home.html:189
+#: core/templates/core/home.html:184
 msgid "visual noise?"
 msgstr "ruido visual?"
 
-#: core/templates/core/home.html:205
+#: core/templates/core/home.html:200
 msgid "Discord"
 msgstr "Discord"
 
-#: core/templates/core/home.html:218
+#: core/templates/core/home.html:213
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: core/templates/core/home.html:230
+#: core/templates/core/home.html:225
 msgid "Location"
 msgstr "Ubicación"
 
-#: core/templates/core/home.html:231
+#: core/templates/core/home.html:226
 msgid "Havana, Cuba"
 msgstr "La Habana, Cuba"
 
-#: core/templates/core/home.html:236
+#: core/templates/core/home.html:231
 msgid "Connect"
 msgstr "Conectar"
 
@@ -200,16 +228,20 @@ msgid "A collection of commercial work, personal projects, and experiments."
 msgstr ""
 "Una colección de trabajos comerciales, proyectos personales y experimentos."
 
-#: core/templates/core/project_list.html:169
+#: core/templates/core/project_list.html:51
+msgid "Watch"
+msgstr "Ver"
+
+#: core/templates/core/project_list.html:186
 msgid "No projects found"
-msgstr ""
+msgstr "No se encontraron proyectos"
 
 # Settings
-#: portfolio_didox/settings.py:119
+#: portfolio_didox/settings.py:137
 msgid "Spanish"
 msgstr "Español"
 
-#: portfolio_didox/settings.py:120
+#: portfolio_didox/settings.py:138
 msgid "English"
 msgstr "Inglés"
 

@@ -20,6 +20,16 @@ class Category(models.Model):
         # However, user wants explicit language switching.
         return self.description_en
 
+class CategoryExample(models.Model):
+    category = models.ForeignKey(Category, related_name='examples', on_delete=models.CASCADE, verbose_name=_("Category"))
+    image = models.ImageField(upload_to='category_examples/', verbose_name=_("Example GIF"))
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Category Example")
+        verbose_name_plural = _("Category Examples")
+        ordering = ['created_at']
+
 class Project(models.Model):
     description = models.CharField(max_length=200, verbose_name=_("Admin Description"), blank=True, help_text=_("Internal description for identifying the project in the admin panel."))
     thumbnail = models.ImageField(upload_to='projects/', verbose_name=_("Thumbnail"))

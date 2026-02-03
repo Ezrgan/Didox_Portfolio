@@ -1,10 +1,16 @@
 from django.contrib import admin
-from .models import Category, Project
+from .models import Category, Project, CategoryExample
+
+class CategoryExampleInline(admin.TabularInline):
+    model = CategoryExample
+    extra = 1
+    max_num = 5
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'min_price')
     search_fields = ('name',)
+    inlines = [CategoryExampleInline]
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):

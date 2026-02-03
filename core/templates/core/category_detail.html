@@ -94,10 +94,22 @@
                          <span class="relative z-10 font-bold tracking-widest uppercase text-sm text-white group-hover:text-white">{% trans "Book This Service" %}</span>
                     </a>
                     
-                    <!-- Botón 2: Quitada clase w-full -->
-                    <a href="{% url 'project_list' %}?category={{ category.id }}" class="group px-8 py-4 border-2 border-gray-200 hover:border-brand-black text-gray-500 hover:text-brand-black font-bold tracking-widest uppercase text-sm transition-all duration-300 text-center sm:text-left w-auto">
-                        {% trans "View Examples" %}
                     </a>
+                </div>
+
+                <!-- Examples Section (Optional) -->
+                {% if category.examples.all %}
+                <div class="border-t border-gray-200 pt-8 mt-8 fade-in-element">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">{% trans "Examples" %}</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        {% for example in category.examples.all %}
+                        <div class="relative aspect-video rounded-lg overflow-hidden shadow-md bg-gray-100">
+                            <img src="{{ example.image.url }}" alt="Example" class="w-full h-full object-cover pointer-events-none">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
                 </div>
             </div>
         </div>
