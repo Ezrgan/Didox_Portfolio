@@ -6,10 +6,12 @@ class Category(models.Model):
     description_en = models.TextField(verbose_name=_("Description (English)"), blank=True, null=True)
     description_es = models.TextField(verbose_name=_("Description (Spanish)"), blank=True, null=True)
     min_price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Minimum Price"))
+    is_gfx = models.BooleanField(default=False, verbose_name=_("Is GFX Category"), help_text=_("Check this if the category contains static images (no video, no links)."))
 
     class Meta:
         verbose_name = _("Category")
         verbose_name_plural = _("Categories")
+
 
     def __str__(self):
         return self.name
@@ -34,7 +36,7 @@ class Project(models.Model):
     description = models.CharField(max_length=200, verbose_name=_("Admin Description"), blank=True, help_text=_("Internal description for identifying the project in the admin panel."))
     thumbnail = models.ImageField(upload_to='projects/', verbose_name=_("Thumbnail"))
     categories = models.ManyToManyField(Category, verbose_name=_("Categories"))
-    link = models.URLField(verbose_name=_("Project Link"))
+    link = models.URLField(verbose_name=_("Project Link"), blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

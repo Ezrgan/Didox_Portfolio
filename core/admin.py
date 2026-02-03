@@ -8,7 +8,7 @@ class CategoryExampleInline(admin.TabularInline):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'min_price')
+    list_display = ('name', 'min_price', 'is_gfx')
     search_fields = ('name',)
     inlines = [CategoryExampleInline]
     save_on_top = True

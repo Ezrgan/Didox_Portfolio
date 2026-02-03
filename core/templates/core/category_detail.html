@@ -81,7 +81,14 @@
                             ${{ category.min_price }}
                         </span>
                         <!-- Cambiado a "min" -->
-                        <span class="text-xl text-brand-black font-medium">/ min</span>
+                        <!-- Cambiado a "min" o "picture" según categoría -->
+                        <span class="text-xl text-brand-black font-medium">
+                            {% if category.is_gfx %}
+                                / {% trans "picture" %}
+                            {% else %}
+                                / min
+                            {% endif %}
+                        </span>
                     </div>
                 </div>
 
