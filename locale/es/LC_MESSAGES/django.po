@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 02:32-0500\n"
+"POT-Creation-Date: 2026-02-03 23:59-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,9 @@ msgstr "¿Es Categoría GFX?"
 
 #: core/models.py:9
 msgid "Check this if the category contains static images (no video, no links)."
-msgstr "Marca esto si la categoría contiene imágenes estáticas (sin video, sin enlaces)."
+msgstr ""
+"Marca esto si la categoría contiene imágenes estáticas (sin video, sin "
+"enlaces)."
 
 #: core/models.py:12 core/models.py:26
 msgid "Category"
@@ -71,7 +73,9 @@ msgstr "Descripción para Admin"
 
 #: core/models.py:36
 msgid "Internal description for identifying the project in the admin panel."
-msgstr "Descripción interna para identificar el proyecto en el panel de administración."
+msgstr ""
+"Descripción interna para identificar el proyecto en el panel de "
+"administración."
 
 #: core/models.py:37
 msgid "Thumbnail"
@@ -117,112 +121,116 @@ msgid "Examples"
 msgstr "Ejemplos"
 
 # Home Page
-#: core/templates/core/home.html:4 templates/core/components/navbar.html:16
+#: core/templates/core/home.html:5 templates/core/components/navbar.html:16
 #: templates/core/components/navbar.html:87
 msgid "Home"
 msgstr "Inicio"
 
-#: core/templates/core/home.html:61
+#: core/templates/core/home.html:62
 msgid "VISUAL"
 msgstr "VISUAL"
 
-#: core/templates/core/home.html:62
+#: core/templates/core/home.html:63
 msgid "STORYTELLER"
 msgstr "NARRADOR"
 
-#: core/templates/core/home.html:67
+#: core/templates/core/home.html:68
 msgid "Motion Graphics • VFX • Post-Production • Digital Animation"
 msgstr "Motion Graphics • VFX • Post-Producción • Animación Digital"
 
-#: core/templates/core/home.html:74
+#: core/templates/core/home.html:75
 msgid "View Work"
 msgstr "Ver Trabajo"
 
-#: core/templates/core/home.html:78
+#: core/templates/core/home.html:79
 msgid "Contact Me"
 msgstr "Contáctame"
 
-#: core/templates/core/home.html:106
+#: core/templates/core/home.html:107
 msgid "About The Artist"
 msgstr "Sobre el Artista"
 
-#: core/templates/core/home.html:109
+#: core/templates/core/home.html:110
 msgid "Creating"
 msgstr "Creando"
 
-#: core/templates/core/home.html:110
+#: core/templates/core/home.html:111
 msgid "Visual Experiences"
 msgstr "Experiencias Visuales"
 
-#: core/templates/core/home.html:115
+#: core/templates/core/home.html:116
 msgid ""
 "My name is Bismark Reyes Arias, a 24-year-old independent audiovisual artist "
-"born in Cuba. I have been specialized in video editing and VFX composition "
-"for over 10 years."
+"born in Cuba. I started at 15. Since the beginning, I was interested in "
+"video editing using After Effects. Over the years, I became a professional "
+"in this software. Currently, I master not only After Effects but also "
+"Premiere Pro, DaVinci Resolve, Photoshop, Maya, Blender, and Cinema 4D."
 msgstr ""
-"Me llamo Bismark Reyes Arias, tengo 24 años y soy un artista audiovisual "
-"independiente nacido en Cuba. Me especializo en edición de video y "
-"composición de VFX desde hace más de 10 años."
+"Mi nombre es Bismark Reyes Arias, soy un joven de 24 años nacido en Cuba y "
+"artista audiovisual independiente desde los 15 años. Desde mis inicios me "
+"interesé en la edición de videos mediante el software After Effects, con los "
+"años me volví profesional dentro de este programa, actualmente no solo "
+"domino After Effects sino también: Premiere Pro, Davinci Resolve, Photoshop, "
+"Maya, Blender y Cinema 4D."
 
-#: core/templates/core/home.html:118
+#: core/templates/core/home.html:119
 msgid ""
-"I master industry-standard software including After Effects, Premiere Pro, "
-"DaVinci Resolve, Photoshop, Maya, Blender, and Cinema 4D."
+"My independent work includes: Thumbnails, Banners, and avatars for YouTube "
+"channels, Flyers, business cards and promotional cards for businesses, Video "
+"Blogs for national YouTubers, Promotional Videos for national stores, "
+"Official Music Videos for independent artists, TV program intros, and "
+"Official Lyric Videos."
 msgstr ""
-"Domino software estándar de la industria, incluyendo After Effects, Premiere "
-"Pro, DaVinci Resolve, Photoshop, Maya, Blender y Cinema 4D."
+"Dentro de los trabajos independientes que he realizado se encuentra: "
+"Miniaturas, Banners y avatares para canales de Youtube, Flyers, tarjetas de "
+"presentación y tarjetas promocionales para negocios, Videos Blogs para "
+"youtubers Nacionales, Videos Promocionales para tiendas nacionales, Videos "
+"Clips oficiales oara artistas musicales independientes, Introducciones para "
+"programas televisivos y Videos Lyrics oficiales."
 
-#: core/templates/core/home.html:121
-msgid ""
-"Currently working as an animation, lighting, and VFX assistant on Cuba's "
-"second fully 3D animated film."
-msgstr ""
-"Actualmente trabajo como asistente de animación, iluminación y VFX en la "
-"segunda película animada completamente en 3D de Cuba."
-
-#: core/templates/core/home.html:144 core/templates/core/home.html:152
+#: core/templates/core/home.html:142 core/templates/core/home.html:150
 msgid "Let's Collaborate"
 msgstr "Colaboremos"
 
-#: core/templates/core/home.html:146 core/templates/core/home.html:154
+#: core/templates/core/home.html:144 core/templates/core/home.html:152
 #, fuzzy
 #| msgid "Back to Projects"
 msgid "Start a Project"
 msgstr "Iniciar un Proyecto"
 
-#: core/templates/core/home.html:148 core/templates/core/home.html:156
+#: core/templates/core/home.html:146 core/templates/core/home.html:154
 msgid "Motion & Design"
 msgstr "Motion & Design"
 
-#: core/templates/core/home.html:180
+#: core/templates/core/home.html:178
 msgid "Open for work"
 msgstr "Disponible"
 
-#: core/templates/core/home.html:183
+#: core/templates/core/home.html:181
 msgid "Ready to make some"
 msgstr "¿Listo para hacer algo de"
 
-#: core/templates/core/home.html:184
+#: core/templates/core/home.html:182
 msgid "visual noise?"
 msgstr "ruido visual?"
 
-#: core/templates/core/home.html:200
+#: core/templates/core/home.html:198
 msgid "Discord"
 msgstr "Discord"
 
-#: core/templates/core/home.html:213
+#: core/templates/core/home.html:211
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: core/templates/core/home.html:225
+#: core/templates/core/home.html:223
 msgid "Location"
 msgstr "Ubicación"
 
-#: core/templates/core/home.html:226
+#: core/templates/core/home.html:224
 msgid "Havana, Cuba"
 msgstr "La Habana, Cuba"
 
-#: core/templates/core/home.html:231
+#: core/templates/core/home.html:229
 msgid "Connect"
 msgstr "Conectar"
 
@@ -270,6 +278,29 @@ msgstr "Sobre Mí"
 #| msgid "Contact Me"
 msgid "Contact"
 msgstr "Contáctame"
+
+#~ msgid ""
+#~ "My name is Bismark Reyes Arias, a 24-year-old independent audiovisual "
+#~ "artist born in Cuba. I have been specialized in video editing and VFX "
+#~ "composition for over 10 years."
+#~ msgstr ""
+#~ "Me llamo Bismark Reyes Arias, tengo 24 años y soy un artista audiovisual "
+#~ "independiente nacido en Cuba. Me especializo en edición de video y "
+#~ "composición de VFX desde hace más de 10 años."
+
+#~ msgid ""
+#~ "I master industry-standard software including After Effects, Premiere "
+#~ "Pro, DaVinci Resolve, Photoshop, Maya, Blender, and Cinema 4D."
+#~ msgstr ""
+#~ "Domino software estándar de la industria, incluyendo After Effects, "
+#~ "Premiere Pro, DaVinci Resolve, Photoshop, Maya, Blender y Cinema 4D."
+
+#~ msgid ""
+#~ "Currently working as an animation, lighting, and VFX assistant on Cuba's "
+#~ "second fully 3D animated film."
+#~ msgstr ""
+#~ "Actualmente trabajo como asistente de animación, iluminación y VFX en la "
+#~ "segunda película animada completamente en 3D de Cuba."
 
 # Contact Section Redesign
 #~ msgid "Have a project in mind?"
