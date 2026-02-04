@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-04 00:16-0500\n"
+"POT-Creation-Date: 2026-02-04 00:40-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,12 +127,12 @@ msgid "Home"
 msgstr "Inicio"
 
 #: core/templates/core/home.html:62
-msgid "VISUAL"
-msgstr "VISUAL"
+msgid "AUDIOVISUAL"
+msgstr "PARAÍSO"
 
 #: core/templates/core/home.html:63
-msgid "STORYTELLER"
-msgstr "NARRADOR"
+msgid "PARADISE"
+msgstr "AUDIOVISUAL"
 
 #: core/templates/core/home.html:68
 msgid "Motion Graphics • VFX • Post-Production • Digital Animation"
@@ -151,14 +151,10 @@ msgid "About The Artist"
 msgstr "Sobre el Artista"
 
 #: core/templates/core/home.html:110
-msgid "Creating"
-msgstr "Creando"
+msgid "Artistic Development"
+msgstr "Desarrollo Artístico"
 
-#: core/templates/core/home.html:111
-msgid "Visual Experiences"
-msgstr "Experiencias Visuales"
-
-#: core/templates/core/home.html:116
+#: core/templates/core/home.html:115
 msgid ""
 "My name is Bismark Reyes Arias, a 24-year-old independent audiovisual artist "
 "born in Cuba. I started at 15. Since the beginning, I was interested in "
@@ -173,7 +169,7 @@ msgstr ""
 "domino After Effects sino también: Premiere Pro, Davinci Resolve, Photoshop, "
 "Maya, Blender y Cinema 4D."
 
-#: core/templates/core/home.html:119
+#: core/templates/core/home.html:118
 msgid ""
 "My independent work includes: Thumbnails, Banners, and avatars for YouTube "
 "channels, Flyers, business cards and promotional cards for businesses, Video "
@@ -188,49 +184,49 @@ msgstr ""
 "Clips oficiales oara artistas musicales independientes, Introducciones para "
 "programas televisivos y Videos Lyrics oficiales."
 
-#: core/templates/core/home.html:142 core/templates/core/home.html:150
+#: core/templates/core/home.html:141 core/templates/core/home.html:149
 msgid "Let's Collaborate"
 msgstr "Colaboremos"
 
-#: core/templates/core/home.html:144 core/templates/core/home.html:152
+#: core/templates/core/home.html:143 core/templates/core/home.html:151
 #, fuzzy
 #| msgid "Back to Projects"
 msgid "Start a Project"
 msgstr "Iniciar un Proyecto"
 
-#: core/templates/core/home.html:146 core/templates/core/home.html:154
+#: core/templates/core/home.html:145 core/templates/core/home.html:153
 msgid "Motion & Design"
 msgstr "Motion & Design"
 
-#: core/templates/core/home.html:178
+#: core/templates/core/home.html:177
 msgid "Open for work"
 msgstr "Disponible"
 
+#: core/templates/core/home.html:180
+msgid "Ready to create a"
+msgstr "¿Listo para crear una"
+
 #: core/templates/core/home.html:181
-msgid "Ready to make some"
-msgstr "¿Listo para hacer algo de"
+msgid "sensory experience?"
+msgstr "experiencia sensorial?"
 
-#: core/templates/core/home.html:182
-msgid "visual noise?"
-msgstr "ruido visual?"
-
-#: core/templates/core/home.html:198
+#: core/templates/core/home.html:197
 msgid "Discord"
 msgstr "Discord"
 
-#: core/templates/core/home.html:211
+#: core/templates/core/home.html:210
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: core/templates/core/home.html:223
+#: core/templates/core/home.html:222
 msgid "Location"
 msgstr "Ubicación"
 
-#: core/templates/core/home.html:224
+#: core/templates/core/home.html:223
 msgid "Havana, Cuba"
 msgstr "La Habana, Cuba"
 
-#: core/templates/core/home.html:229
+#: core/templates/core/home.html:228
 msgid "Connect"
 msgstr "Conectar"
 
@@ -282,6 +278,18 @@ msgstr "Sobre Mí"
 #| msgid "Contact Me"
 msgid "Contact"
 msgstr "Contáctame"
+
+#~ msgid "STORYTELLER"
+#~ msgstr "NARRADOR"
+
+#~ msgid "Creating"
+#~ msgstr "Creando"
+
+#~ msgid "Visual Experiences"
+#~ msgstr "Experiencias Visuales"
+
+#~ msgid "visual noise?"
+#~ msgstr "ruido visual?"
 
 #~ msgid ""
 #~ "My name is Bismark Reyes Arias, a 24-year-old independent audiovisual "
