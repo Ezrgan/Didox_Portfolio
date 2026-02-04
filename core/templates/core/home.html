@@ -58,9 +58,9 @@
     <div class="relative z-10 container mx-auto px-6 h-screen flex flex-col justify-center items-center text-center">
         <!-- Main Heading -->
         {% get_current_language as LANGUAGE_CODE %}
-        <h1 class="hero-text font-display font-black {% if LANGUAGE_CODE == 'en' %}text-[12vw] sm:text-6xl md:text-[10vw] lg:text-9xl{% else %}text-6xl sm:text-7xl md:text-8xl lg:text-9xl{% endif %} mb-6 tracking-tighter leading-none opacity-0 translate-y-20 w-full">
+        <h1 class="hero-text font-display font-black {% if LANGUAGE_CODE == 'en' %}text-[10vw] sm:text-6xl md:text-[10vw] lg:text-9xl{% else %}text-5xl sm:text-7xl md:text-8xl lg:text-9xl{% endif %} mb-6 tracking-wide leading-none opacity-0 translate-y-20 w-full">
             <span class="text-brand-black block">{% trans "AUDIOVISUAL" %}</span>
-            <span class="brand-gradient-text block">{% trans "PARADISE" %}</span>
+            <span class="brand-gradient-text block pb-2 pr-4">{% trans "PARADISE" %}</span>
         </h1>
         
         <!-- Subheading -->
