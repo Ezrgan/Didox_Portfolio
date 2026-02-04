@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-_%sfl*^k#1^ysse!)3pzj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['didox01.pythonanywhere.com', 'www.bismarkgallery.com']
 
 # Production Security Settings
 if not DEBUG:
