@@ -1687,6 +1687,14 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 2rem;
 }
 
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2430,6 +2438,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .md\:mb-20 {
     margin-bottom: 5rem;
+  }
+
+  .md\:ml-4 {
+    margin-left: 1rem;
   }
 
   .md\:block {
