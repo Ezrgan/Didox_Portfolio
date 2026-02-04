@@ -18,6 +18,9 @@
     </div>
 
     <!-- Category Filter Bubbles (Minimalist Light Theme) -->
+    <p class="text-center text-xs font-mono text-gray-400 uppercase tracking-widest mb-6">
+        {% trans "Select a category to filter projects" %}
+    </p>
     <div class="flex flex-wrap justify-center gap-3 mb-20" id="category-filters">
         {% for category in categories %}
         <button 

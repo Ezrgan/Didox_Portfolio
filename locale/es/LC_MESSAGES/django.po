@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 23:59-0500\n"
+"POT-Creation-Date: 2026-02-04 00:16-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -248,12 +248,16 @@ msgid "A collection of commercial work, personal projects, and experiments."
 msgstr ""
 "Una colección de trabajos comerciales, proyectos personales y experimentos."
 
-#: core/templates/core/project_list.html:52
-#: core/templates/core/project_list.html:211
+#: core/templates/core/project_list.html:22
+msgid "Select a category to filter projects"
+msgstr "Selecciona una categoría para filtrar los proyectos"
+
+#: core/templates/core/project_list.html:55
+#: core/templates/core/project_list.html:214
 msgid "Watch"
 msgstr "Ver"
 
-#: core/templates/core/project_list.html:190
+#: core/templates/core/project_list.html:193
 msgid "No projects found"
 msgstr "No se encontraron proyectos"
 
