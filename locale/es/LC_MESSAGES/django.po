@@ -157,32 +157,53 @@ msgstr "Desarrollo Artístico"
 #: core/templates/core/home.html:115
 msgid ""
 "My name is Bismark Reyes Arias, a 24-year-old independent audiovisual artist "
-"born in Cuba. I started at 15. Since the beginning, I was interested in "
-"video editing using After Effects. Over the years, I became a professional "
-"in this software. Currently, I master not only After Effects but also "
+"from Cuba. I began my creative journey at the age of 15, when I first "
+"discovered my passion for video editing with After Effects. Over time, I "
+"developed my skills and became a professional in this software. Today, I "
+"work confidently across multiple platforms, including After Effects, "
 "Premiere Pro, DaVinci Resolve, Photoshop, Maya, Blender, and Cinema 4D."
 msgstr ""
-"Mi nombre es Bismark Reyes Arias, soy un joven de 24 años nacido en Cuba y "
-"artista audiovisual independiente desde los 15 años. Desde mis inicios me "
-"interesé en la edición de videos mediante el software After Effects, con los "
-"años me volví profesional dentro de este programa, actualmente no solo "
-"domino After Effects sino también: Premiere Pro, Davinci Resolve, Photoshop, "
-"Maya, Blender y Cinema 4D."
+"Mi nombre es Bismark Reyes Arias, soy un artista audiovisual independiente "
+"de 24 años, nacido en Cuba. Comencé mi camino creativo a los 15 años, cuando "
+"descubrí mi pasión por la edición de video con After Effects. Con el tiempo, "
+"perfeccioné mis habilidades y me convertí en profesional en este software. "
+"Hoy en día, trabajo profesionalmente en múltiples plataformas, incluyendo "
+"After Effects, Premiere Pro, DaVinci Resolve, Photoshop, Maya, Blender y "
+"Cinema 4D."
 
 #: core/templates/core/home.html:118
-msgid ""
-"My independent work includes: Thumbnails, Banners, and avatars for YouTube "
-"channels, Flyers, business cards and promotional cards for businesses, Video "
-"Blogs for national YouTubers, Promotional Videos for national stores, "
-"Official Music Videos for independent artists, TV program intros, and "
-"Official Lyric Videos."
+msgid "My freelance career includes a wide range of projects, such as:"
 msgstr ""
-"Dentro de los trabajos independientes que he realizado se encuentra: "
-"Miniaturas, Banners y avatares para canales de Youtube, Flyers, tarjetas de "
-"presentación y tarjetas promocionales para negocios, Videos Blogs para "
-"youtubers Nacionales, Videos Promocionales para tiendas nacionales, Videos "
-"Clips oficiales oara artistas musicales independientes, Introducciones para "
-"programas televisivos y Videos Lyrics oficiales."
+"Mi carrera freelance incluye una amplia variedad de proyectos, tales como:"
+
+#: core/templates/core/home.html:120
+msgid "Thumbnails, banners, and avatars for YouTube channels"
+msgstr "Miniaturas, banners y avatares para canales de YouTube"
+
+#: core/templates/core/home.html:121
+msgid "Flyers, business cards, and promotional materials for businesses"
+msgstr ""
+"Flyers, tarjetas de presentación y materiales promocionales para negocios"
+
+#: core/templates/core/home.html:122
+msgid "Video blogs for local YouTubers"
+msgstr "Video blogs para YouTubers locales"
+
+#: core/templates/core/home.html:123
+msgid "Promotional videos for local stores"
+msgstr "Videos promocionales para tiendas locales"
+
+#: core/templates/core/home.html:124
+msgid "Official music videos for independent artists"
+msgstr "Videoclips oficiales para artistas independientes"
+
+#: core/templates/core/home.html:125
+msgid "TV program intros"
+msgstr "Intros para programas de televisión"
+
+#: core/templates/core/home.html:126
+msgid "Official lyrics videos"
+msgstr "Videos lyrics oficiales"
 
 #: core/templates/core/home.html:141 core/templates/core/home.html:149
 msgid "Let's Collaborate"
