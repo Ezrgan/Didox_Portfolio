@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-_%sfl*^k#1^ysse!)3pzj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['didox01.pythonanywhere.com', 'didox-portfolio.onrender.com', 'www.bismarkgallery.com']
+ALLOWED_HOSTS = ['didox-portfolio.onrender.com', 'www.bismarkgallery.com', 'bismarkgallery.com']
 
 # Production Security Settings
 if not DEBUG:
@@ -142,6 +142,15 @@ LOCALE_PATHS = [
 ]
 
 
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
@@ -152,10 +161,10 @@ STATIC_ROOT = BASE_DIR / 'staticfiles' # Production static root
 # Using basic storage first to avoid issues with missing files during build if not perfect.
 # But CompressedManifest is better. Let's stick to standard behavior for now to be safe.
 # Actually Render recommends it.
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -168,5 +177,4 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
 
-# Esto le dice a Django que use Cloudinary para los archivos media (imágenes/videos)
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
