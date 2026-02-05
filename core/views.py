@@ -2,10 +2,17 @@ from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render
 from django.db.models import Q
 from django.http import JsonResponse
-from .models import Project, Category
+from .models import Project, Category, SiteConfiguration
 
 class HomeView(TemplateView):
     template_name = 'core/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Get or create the site config (singleton-ish)
+        config, created = SiteConfiguration.objects.get_or_create(pk=1)
+        context['site_config'] = config
+        return context
 
 class ProjectListView(ListView):
     model = Project

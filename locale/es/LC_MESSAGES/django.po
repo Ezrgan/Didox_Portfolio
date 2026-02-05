@@ -223,6 +223,10 @@ msgstr "Motion & Design"
 msgid "Open for work"
 msgstr "Disponible"
 
+#: core/templates/core/home.html:177
+msgid "Fully Booked"
+msgstr "No Disponible"
+
 #: core/templates/core/home.html:180
 msgid "Ready to create a"
 msgstr "¿Listo para crear una"

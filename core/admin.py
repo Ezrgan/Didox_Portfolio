@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Project, CategoryExample
+from .models import Category, Project, CategoryExample, SiteConfiguration
 
 class CategoryExampleInline(admin.TabularInline):
     model = CategoryExample
@@ -22,3 +22,13 @@ class ProjectAdmin(admin.ModelAdmin):
 @admin.register(CategoryExample)
 class CategoryExampleAdmin(admin.ModelAdmin):
     list_display = ('category', 'created_at')
+
+@admin.register(SiteConfiguration)
+class SiteConfigurationAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        if self.model.objects.exists():
+            return False
+        return super().has_add_permission(request)
+
+    def has_delete_permission(self, request, obj=None):
+        return False

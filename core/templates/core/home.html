@@ -184,8 +184,13 @@
                 <!-- Header -->
                 <div class="space-y-4 text-center">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-white shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        <span class="text-xs font-mono text-gray-500 tracking-widest uppercase">{% trans "Open for work" %}</span>
+                        {% if site_config.is_open_for_work %}
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            <span class="text-xs font-mono text-gray-500 tracking-widest uppercase">{% trans "Open for work" %}</span>
+                        {% else %}
+                            <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                            <span class="text-xs font-mono text-gray-400 tracking-widest uppercase">{% trans "Fully Booked" %}</span>
+                        {% endif %}
                     </div>
                     <h2 class="text-4xl md:text-5xl font-display font-bold tracking-tight text-brand-black">
                         {% trans "Ready to create a" %} <br>
