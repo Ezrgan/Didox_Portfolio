@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-_%sfl*^k#1^ysse!)3pzj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['didox01.pythonanywhere.com', 'www.bismarkgallery.com', 'didox-portfolio.onrender.com']
+ALLOWED_HOSTS = ['didox01.pythonanywhere.com', 'didox-portfolio.onrender.com', 'www.bismarkgallery.com']
 
 # Production Security Settings
 if not DEBUG:
@@ -39,7 +39,6 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,8 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
-    # 'django_modeltranslation', # User rejected translation library
+    'cloudinary',
     'core',
 ]
 
@@ -161,3 +161,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+
+# Esto le dice a Django que use Cloudinary para los archivos media (imágenes/videos)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
