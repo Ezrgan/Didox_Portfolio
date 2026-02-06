@@ -48,7 +48,8 @@ class ProjectListView(ListView):
                         # public_id es lo que Cloudinary necesita para transformar
                         thumb_url, options = cloudinary_url(
                             project.thumbnail.public_id, 
-                            format="auto", 
+                            fetch_format="auto",
+                            format="jpg",
                             quality="auto", 
                             width=800, 
                             crop="limit",

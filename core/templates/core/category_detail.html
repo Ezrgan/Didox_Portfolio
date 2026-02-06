@@ -108,7 +108,7 @@
                 {% for example in category.examples.all %}
                 <div class="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-100 hover:shadow-2xl transition-shadow duration-300">
                     <!-- IMAGEN OPTIMIZADA CON CLOUDINARY TAG -->
-                    {% cloudinary example.image format="auto" quality="auto" width=600 crop="limit" class="w-full h-full object-cover pointer-events-none" alt="Example" %}
+                    {% cloudinary example.image fetch_format="auto" quality="auto" width=600 crop="limit" class="w-full h-full object-cover pointer-events-none" alt="Example" %}
                 </div>
                 {% endfor %}
             </div>
