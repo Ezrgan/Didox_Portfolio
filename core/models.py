@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name=_("Name"))
@@ -24,7 +25,8 @@ class Category(models.Model):
 
 class CategoryExample(models.Model):
     category = models.ForeignKey(Category, related_name='examples', on_delete=models.CASCADE, verbose_name=_("Category"))
-    image = models.ImageField(upload_to='category_examples/', verbose_name=_("Example GIF"))
+    # Usamos CloudinaryField para optimización automática
+    image = CloudinaryField('image', folder='category_examples')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -34,7 +36,8 @@ class CategoryExample(models.Model):
 
 class Project(models.Model):
     description = models.CharField(max_length=200, verbose_name=_("Admin Description"), blank=True, help_text=_("Internal description for identifying the project in the admin panel."))
-    thumbnail = models.ImageField(upload_to='projects/', verbose_name=_("Thumbnail"))
+    # Usamos CloudinaryField para optimización automática
+    thumbnail = CloudinaryField('image', folder='projects')
     categories = models.ManyToManyField(Category, verbose_name=_("Categories"))
     link = models.URLField(verbose_name=_("Project Link"), blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

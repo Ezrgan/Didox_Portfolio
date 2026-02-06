@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load cloudinary %}
 
 {% block title %}{{ category.name }}{% endblock %}
 
@@ -56,8 +57,6 @@
                 <h1 class="text-6xl md:text-8xl lg:text-[7rem] font-display font-black leading-[0.9] tracking-tighter uppercase text-brand-black break-words reveal-text">
                     {{ category.name }}
                 </h1>
-                
-                <!-- Eliminada la barra azul que no te gustaba -->
             </div>
 
             <!-- Right Column: Description & Price (Editorial Style) -->
@@ -80,8 +79,6 @@
                         <span class="text-6xl md:text-7xl font-display font-bold text-brand-blue-1 tracking-tighter">
                             ${{ category.min_price }}
                         </span>
-                        <!-- Cambiado a "min" -->
-                        <!-- Cambiado a "min" o "picture" según categoría -->
                         <span class="text-xl text-brand-black font-medium">
                             {% if category.is_gfx %}
                                 / {% trans "picture" %}
@@ -93,14 +90,10 @@
                 </div>
 
                 <!-- Call to Actions -->
-                <!-- Agregado items-start para que los botones no se estiren -->
                 <div class="flex flex-col sm:flex-row gap-6 pt-4 fade-in-element items-start">
-                    <!-- Botón 1: Quitada clase w-full, forzado text-white en hover -->
                     <a href="{% url 'home' %}#contact" class="group relative px-8 py-4 bg-brand-black text-white overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-center sm:text-left inline-block w-auto">
                          <span class="absolute inset-0 w-full h-full bg-brand-blue-1 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
                          <span class="relative z-10 font-bold tracking-widest uppercase text-sm text-white group-hover:text-white">{% trans "Book This Service" %}</span>
-                    </a>
-                    
                     </a>
                 </div>
 
@@ -114,15 +107,14 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {% for example in category.examples.all %}
                 <div class="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-100 hover:shadow-2xl transition-shadow duration-300">
-                    <img src="{{ example.image.url }}" alt="Example" class="w-full h-full object-cover pointer-events-none">
+                    <!-- IMAGEN OPTIMIZADA CON CLOUDINARY TAG -->
+                    {% cloudinary example.image format="auto" quality="auto" width=600 crop="limit" class="w-full h-full object-cover pointer-events-none" alt="Example" %}
                 </div>
                 {% endfor %}
             </div>
         </div>
         {% endif %}
     </div>
-
-    <!-- Eliminado el degradado inferior que molestaba -->
 </div>
 {% endblock %}
 
