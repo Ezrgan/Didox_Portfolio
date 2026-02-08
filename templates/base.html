@@ -5,9 +5,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bismark Reyes - {% block title %}Portfolio{% endblock %}</title>
     
-    <!-- Fonts -->
+    <!-- ==============================================
+         SEO & META TAGS
+    =============================================== -->
+    <title>Bismark Reyes - {% block title %}Portfolio{% endblock %}</title>
+    <meta name="description" content="{% trans 'Creative Portfolio of Bismark Reyes. Motion Graphics, VFX, and Art Direction.' %}">
+    <meta name="author" content="Bismark Reyes">
+    <meta name="keywords" content="Motion Graphics, VFX, 3D, Design, Portfolio, Bismark Reyes, Creative Director">
+
+    <!-- ==============================================
+         OPEN GRAPH (WhatsApp, Facebook, LinkedIn)
+    =============================================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:title" content="Bismark Reyes - {% block og_title %}Motion Graphics & VFX{% endblock %}">
+    <meta property="og:description" content="{% trans 'Check out my latest commercial work, personal projects, and experiments in Motion Graphics and VFX.' %}">
+    
+    <!-- IMPORTANTE: WhatsApp necesita URL absoluta (https://dominio.com/static/...) -->
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'banner.png' %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Bismark Reyes Gallery">
+
+    <!-- ==============================================
+         TWITTER CARDS
+    =============================================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bismark Reyes - Portfolio">
+    <meta name="twitter:description" content="{% trans 'Motion Graphics, VFX, and Creative Direction.' %}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'banner.png' %}">
+
+    <!-- ==============================================
+         FAVICON (El iconito de la pestaña)
+    =============================================== -->
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <!-- Opcional: Icono para iPhone/iPad -->
+    <link rel="apple-touch-icon" href="{% static 'banner.png' %}"> 
+
+    <!-- ==============================================
+         FONTS & STYLES
+    =============================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
@@ -16,7 +55,7 @@
     <link href="{% static 'css/output.css' %}" rel="stylesheet">
     
     <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     
     <style>
         [x-cloak] { display: none !important; }
