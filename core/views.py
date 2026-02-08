@@ -1,9 +1,6 @@
 from django.views.generic import TemplateView, ListView, DetailView
-from django.shortcuts import render
-from django.db.models import Q
 from django.http import JsonResponse
-from .models import Project, Category, SiteConfiguration
-# Importaciones necesarias para optimizar imágenes en AJAX
+from .models import Project, Category, UserProfile
 import cloudinary
 from cloudinary.utils import cloudinary_url
 
@@ -12,9 +9,11 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Get or create the site config (singleton-ish)
-        config, created = SiteConfiguration.objects.get_or_create(pk=1)
-        context['site_config'] = config
+        
+        # Perfil del usuario (Enviamos el primero que encuentre)
+        # Ahora el perfil contiene el campo is_open_for_work
+        context['profile'] = UserProfile.objects.first()
+        
         return context
 
 class ProjectListView(ListView):
@@ -36,27 +35,22 @@ class ProjectListView(ListView):
         return context
 
     def render_to_response(self, context, **response_kwargs):
-        # Handle AJAX request for filtering
         if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
             projects_data = []
             for project in context['projects']:
-                # Lógica de optimización manual para el JSON
                 thumb_url = ''
                 if project.thumbnail:
                     try:
-                        # Genera URL: f_auto, q_auto, ancho 800px y crop limit
-                        # public_id es lo que Cloudinary necesita para transformar
                         thumb_url, options = cloudinary_url(
                             project.thumbnail.public_id, 
+                            format="jpg", 
                             fetch_format="auto",
-                            format="jpg",
                             quality="auto", 
                             width=800, 
                             crop="limit",
                             secure=True
                         )
                     except AttributeError:
-                        # Fallback por seguridad si la imagen antigua no tiene public_id
                         thumb_url = project.thumbnail.url
 
                 projects_data.append({
@@ -80,5 +74,5 @@ class CategoryDetailView(DetailView):
     model = Category
     template_name = 'core/category_detail.html'
     context_object_name = 'category'
-    slug_field = 'id' # Using ID for simplicity as slug wasn't strictly requested but better for URL
+    slug_field = 'id' 
     slug_url_kwarg = 'pk'

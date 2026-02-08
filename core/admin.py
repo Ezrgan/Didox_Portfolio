@@ -1,34 +1,41 @@
 from django.contrib import admin
-from .models import Category, Project, CategoryExample, SiteConfiguration
+from .models import Category, CategoryExample, Project, UserProfile
 
 class CategoryExampleInline(admin.TabularInline):
     model = CategoryExample
     extra = 1
-    max_num = 5
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'min_price', 'is_gfx')
-    search_fields = ('name',)
     inlines = [CategoryExampleInline]
-    save_on_top = True
+    list_display = ('name', 'min_price', 'is_gfx')
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('description', 'created_at')
-    list_filter = ('categories',)
     filter_horizontal = ('categories',)
 
-@admin.register(CategoryExample)
-class CategoryExampleAdmin(admin.ModelAdmin):
-    list_display = ('category', 'created_at')
-
-@admin.register(SiteConfiguration)
-class SiteConfigurationAdmin(admin.ModelAdmin):
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    # Evita que se creen múltiples perfiles
     def has_add_permission(self, request):
-        if self.model.objects.exists():
-            return False
-        return super().has_add_permission(request)
+        # Si ya existe 1 objeto, no deja crear más
+        return not UserProfile.objects.exists()
 
-    def has_delete_permission(self, request, obj=None):
-        return False
+    fieldsets = (
+        ('Status', {
+            'fields': ('is_open_for_work',)
+        }),
+        ('Personal Info', {
+            'fields': ('full_name', 'profile_image', 'location', 'skills')
+        }),
+        ('Biography', {
+            'fields': ('bio_es', 'bio_en')
+        }),
+        ('Mandatory Contact', {
+            'fields': ('whatsapp', 'discord')
+        }),
+        ('Social Networks (Optional)', {
+            'fields': ('freelance', 'instagram', 'twitter', 'facebook', 'linkedin', 'youtube')
+        }),
+    )

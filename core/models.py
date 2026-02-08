@@ -13,19 +13,11 @@ class Category(models.Model):
         verbose_name = _("Category")
         verbose_name_plural = _("Categories")
 
-
     def __str__(self):
         return self.name
 
-    @property
-    def description(self):
-        # Fallback for code that still accesses .description (optional, but good for safety)
-        # However, user wants explicit language switching.
-        return self.description_en
-
 class CategoryExample(models.Model):
     category = models.ForeignKey(Category, related_name='examples', on_delete=models.CASCADE, verbose_name=_("Category"))
-    # Usamos CloudinaryField para optimización automática
     image = CloudinaryField('image', folder='category_examples')
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -35,8 +27,7 @@ class CategoryExample(models.Model):
         ordering = ['created_at']
 
 class Project(models.Model):
-    description = models.CharField(max_length=200, verbose_name=_("Admin Description"), blank=True, help_text=_("Internal description for identifying the project in the admin panel."))
-    # Usamos CloudinaryField para optimización automática
+    description = models.CharField(max_length=200, verbose_name=_("Admin Description"), blank=True)
     thumbnail = CloudinaryField('image', folder='projects')
     categories = models.ManyToManyField(Category, verbose_name=_("Categories"))
     link = models.URLField(verbose_name=_("Project Link"), blank=True, null=True)
@@ -50,23 +41,48 @@ class Project(models.Model):
     def __str__(self):
         return self.description if self.description else f"Project {self.id}"
 
-class SiteConfiguration(models.Model):
+# --- MODELO DE PERFIL (SOLUCIÓN DEFINITIVA) ---
+
+class UserProfile(models.Model):
+    # Estado del Freelancer
     is_open_for_work = models.BooleanField(
         default=True, 
         verbose_name=_("Is Open for Work?"), 
-        help_text=_("Uncheck to show 'Fully Booked' status on the home page.")
+        help_text=_("Desmarcar para mostrar estado 'Fully Booked'.")
     )
 
+    full_name = models.CharField(max_length=150, verbose_name=_("Full Name"))
+    profile_image = CloudinaryField('image', folder='profile', blank=True, null=True)
+    
+    # Ubicación Única
+    location = models.CharField(max_length=100, verbose_name=_("Location"), default="Cuba")
+    
+    # Biografía (Idiomas separados)
+    bio_es = models.TextField(verbose_name=_("Biography (Spanish)"), help_text=_("Puedes incluir tu edad aquí manualmente."))
+    bio_en = models.TextField(verbose_name=_("Biography (English)"))
+
+    # Skills Únicas
+    skills = models.TextField(verbose_name=_("Skills"), help_text=_("Lista separada por comas. Ej: After Effects, Blender, Nuke"))
+
+    # Contacto Obligatorio
+    whatsapp = models.CharField(max_length=20, verbose_name=_("WhatsApp Number"), help_text=_("Obligatorio. Incluir código país: +53..."))
+    discord = models.CharField(max_length=100, verbose_name=_("Discord UserID"), help_text=_("Obligatorio."))
+
+    # Redes Sociales Opcionales
+    freelance = models.URLField(verbose_name=_("Freelance URL"), blank=True, null=True, help_text=_("Link a Upwork, Fiverr, etc."))
+    instagram = models.URLField(verbose_name=_("Instagram URL"), blank=True, null=True)
+    twitter = models.URLField(verbose_name=_("Twitter/X URL"), blank=True, null=True)
+    facebook = models.URLField(verbose_name=_("Facebook URL"), blank=True, null=True)
+    linkedin = models.URLField(verbose_name=_("LinkedIn URL"), blank=True, null=True)
+    youtube = models.URLField(verbose_name=_("YouTube URL"), blank=True, null=True)
+
     class Meta:
-        verbose_name = _("Site Configuration")
-        verbose_name_plural = _("Site Configuration")
+        verbose_name = _("User Profile")
+        verbose_name_plural = _("User Profile")
 
     def __str__(self):
-        return str(_("Site Configuration"))
+        return self.full_name
 
-    def save(self, *args, **kwargs):
-        if not self.pk and SiteConfiguration.objects.exists():
-            # Force update the existing one if someone tries to create a new one via code
-            # But normally we handle this in Admin
-            return SiteConfiguration.objects.first().save(*args, **kwargs)
-        return super(SiteConfiguration, self).save(*args, **kwargs)
+    # Método helper para el template
+    def get_skills_list(self):
+        return [s.strip() for s in self.skills.split(',')] if self.skills else []
